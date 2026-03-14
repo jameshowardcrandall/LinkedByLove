@@ -1,0 +1,80 @@
+---
+const eventTypes = [
+    'Bridal Showers',
+    'Bachelorette Parties',
+    'Birthday Parties',
+    "Girls' Night",
+    'Corporate Events',
+    'Baby Showers',
+];
+---
+
+<section class="events" id="events">
+    <div class="section-inner reveal">
+        <p class="section-label">Celebrations</p>
+        <h2 class="section-title">Private Events</h2>
+        <div class="section-divider"></div>
+
+        <div class="events-content">
+            <p>
+                Want the permanent jewelry experience at your next celebration?
+                We bring everything to you! Perfect for a memorable, one-of-a-kind experience
+                your guests will never forget (or take off).
+            </p>
+
+            <div class="event-types">
+                {eventTypes.map(type => (
+                    <div class="event-type">{type}</div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .events {
+        background: var(--cream);
+    }
+
+    .events-content {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .events-content p {
+        font-size: 13px;
+        color: var(--text-light);
+        line-height: 2;
+        margin-bottom: 20px;
+    }
+
+    .event-types {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .event-type {
+        padding: 14px 28px;
+        border: 1px solid rgba(184, 150, 78, 0.2);
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-light);
+        transition: all 0.3s ease;
+    }
+
+    .event-type:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+        .event-types {
+            gap: 12px;
+        }
+    }
+</style>

@@ -1,0 +1,122 @@
+---
+const faqs = [
+    {
+        q: 'What is permanent jewelry?',
+        a: "Permanent jewelry is a custom-fitted chain (bracelet, anklet, necklace, or ring) that is welded closed with a quick, painless micro-weld. There's no clasp — it's designed to stay on 24/7 and becomes a part of you!",
+    },
+    {
+        q: 'Does the welding hurt?',
+        a: "Not at all! The micro-weld takes just a fraction of a second and you won't feel any heat or discomfort. It's completely safe and painless — most people say they barely notice it.",
+    },
+    {
+        q: 'Can I shower and swim with it?',
+        a: "Yes! Our gold-filled and sterling silver chains are designed to be worn through everyday life — showering, swimming, working out, and sleeping. That's the beauty of permanent jewelry.",
+    },
+    {
+        q: 'What if I need to remove it?',
+        a: "If you ever need it removed (like for surgery or an MRI), you can easily cut it off with scissors or nail clippers. Bring it back to us and we'll re-weld it for free!",
+    },
+    {
+        q: 'Do I need an appointment?',
+        a: 'At farmers markets, we welcome walk-ups! For private events and parties, please reach out to us ahead of time so we can plan everything perfectly for your group.',
+    },
+    {
+        q: 'How long does it take?',
+        a: "The whole process — choosing your chain, getting fitted, and welding — takes about 10–15 minutes. Quick enough to do while you're browsing the market!",
+    },
+];
+---
+
+<section class="faq" id="faq">
+    <div class="section-inner reveal">
+        <p class="section-label">Questions</p>
+        <h2 class="section-title">Good to Know</h2>
+        <div class="section-divider"></div>
+
+        <div class="faq-list">
+            {faqs.map(faq => (
+                <div class="faq-item">
+                    <button class="faq-question">
+                        {faq.q}
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>{faq.a}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement!;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        });
+    });
+</script>
+
+<style>
+    .faq {
+        background: white;
+    }
+
+    .faq-list {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid rgba(184, 150, 78, 0.12);
+        padding: 24px 0;
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 17px;
+        color: var(--rose);
+        font-weight: 500;
+        padding: 0;
+    }
+
+    .icon {
+        font-size: 18px;
+        color: var(--gold);
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        margin-left: 16px;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-answer p {
+        padding-top: 14px;
+        font-size: 13px;
+        color: var(--text-light);
+        line-height: 1.9;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 300px;
+    }
+
+    .faq-item.active .icon {
+        transform: rotate(45deg);
+    }
+</style>

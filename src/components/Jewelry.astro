@@ -1,0 +1,109 @@
+---
+const items = [
+    { icon: '&#9675;', name: 'Bracelets', desc: 'The most popular choice — dainty chains that wrap your wrist in gold or silver', price: 'from $35' },
+    { icon: '&#9674;', name: 'Anklets', desc: 'Perfect for summer — a subtle shimmer that catches the light with every step', price: 'from $40' },
+    { icon: '&#10023;', name: 'Necklaces', desc: 'Delicate chains for layering or wearing solo, custom-fit to your perfect length', price: 'from $50' },
+    { icon: '&#8226;', name: 'Rings', desc: 'Tiny & dainty permanent rings — a sparkling detail for every day', price: 'from $25' },
+    { icon: '&#10047;', name: 'Charms', desc: 'Add a personal touch — initials, hearts, stars, and seasonal designs', price: 'from $5' },
+    { icon: '&#9830;', name: 'Friendship Sets', desc: 'Matching pieces for best friends, sisters, mother & daughter — linked forever', price: 'ask us!' },
+];
+---
+
+<section class="chains" id="chains">
+    <div class="section-inner reveal">
+        <p class="section-label">Our Collection</p>
+        <h2 class="section-title">Jewelry</h2>
+        <div class="section-divider"></div>
+
+        <div class="chain-grid">
+            {items.map(item => (
+                <div class="chain-card">
+                    <span class="chain-icon" set:html={item.icon} />
+                    <h3>{item.name}</h3>
+                    <p>{item.desc}</p>
+                    <div class="price">{item.price}</div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .chains {
+        background: white;
+    }
+
+    .chain-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 20px;
+    }
+
+    .chain-card {
+        border: 1px solid rgba(184, 150, 78, 0.15);
+        padding: 36px 24px;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chain-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .chain-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(184, 150, 78, 0.08);
+    }
+
+    .chain-card:hover::before {
+        opacity: 1;
+    }
+
+    .chain-icon {
+        font-size: 24px;
+        margin-bottom: 14px;
+        display: block;
+    }
+
+    .chain-card h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--rose);
+        margin-bottom: 8px;
+    }
+
+    .chain-card p {
+        font-size: 12px;
+        color: var(--text-light);
+        line-height: 1.7;
+    }
+
+    .price {
+        margin-top: 14px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        color: var(--gold);
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .chain-grid {
+            grid-template-columns: 1fr;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+</style>

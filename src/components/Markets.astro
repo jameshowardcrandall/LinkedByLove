@@ -1,0 +1,140 @@
+---
+
+---
+
+<section class="markets" id="markets">
+    <div class="section-inner reveal">
+        <p class="section-label">Find Us</p>
+        <h2 class="section-title">At the Market</h2>
+        <div class="section-divider"></div>
+
+        <p class="markets-intro">
+            We love meeting you in person! You'll find us at local farmers markets across Virginia and Maryland.
+            Follow us on social media for our latest market schedule and pop-up locations.
+        </p>
+
+        <div class="market-regions">
+            <div class="market-region">
+                <h3>Virginia</h3>
+                <div class="region-label">Markets &amp; Events</div>
+                <p>
+                    Find us at local farmers markets and pop-ups throughout Northern Virginia and beyond.
+                </p>
+                <ul class="market-list">
+                    <li>Weekend Farmers Markets</li>
+                    <li>Local Craft Fairs</li>
+                    <li>Pop-Up Events</li>
+                    <li>Private Parties</li>
+                </ul>
+            </div>
+            <div class="market-region">
+                <h3>Maryland</h3>
+                <div class="region-label">Markets &amp; Events</div>
+                <p>
+                    Catch us at popular Maryland markets and community events throughout the season.
+                </p>
+                <ul class="market-list">
+                    <li>Weekend Farmers Markets</li>
+                    <li>Community Festivals</li>
+                    <li>Pop-Up Events</li>
+                    <li>Private Parties</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="markets-cta">
+            <p>Follow us for our weekly schedule</p>
+            <span>Markets &amp; locations updated every week on our social media</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    .markets {
+        background: white;
+    }
+
+    .markets-intro {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 50px;
+        font-size: 13px;
+        color: var(--text-light);
+        line-height: 2;
+    }
+
+    .market-regions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .market-region {
+        padding: 40px;
+        background: var(--cream);
+        border: 1px solid rgba(184, 150, 78, 0.1);
+        text-align: center;
+    }
+
+    .market-region h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        color: var(--rose);
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+
+    .region-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+    }
+
+    .market-region p {
+        font-size: 13px;
+        color: var(--text-light);
+        line-height: 2;
+    }
+
+    .market-list {
+        list-style: none;
+        margin-top: 16px;
+    }
+
+    .market-list li {
+        padding: 8px 0;
+        font-size: 13px;
+        color: var(--text-light);
+        border-bottom: 1px solid rgba(184, 150, 78, 0.08);
+    }
+
+    .market-list li:last-child {
+        border-bottom: none;
+    }
+
+    .markets-cta {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .markets-cta p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        font-style: italic;
+        color: var(--rose);
+        margin-bottom: 6px;
+    }
+
+    .markets-cta span {
+        font-size: 12px;
+        color: var(--text-light);
+    }
+
+    @media (max-width: 768px) {
+        .market-regions {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

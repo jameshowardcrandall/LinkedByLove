@@ -1,0 +1,170 @@
+---
+
+---
+
+<section class="hero" id="hero">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+
+    <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Linked by Love Permanent Jewelry" class="hero-logo" />
+
+    <p class="hero-tagline">No clasp. No fuss. Forever yours.</p>
+    <p class="hero-subtitle">Custom welded jewelry at your favorite local markets</p>
+
+    <a href="#contact" class="hero-cta">Book Your Appointment</a>
+
+    <div class="hero-locations">
+        Virginia <span class="dot"></span> Maryland
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 30px 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+            radial-gradient(ellipse at 20% 50%, rgba(212, 185, 120, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 50%, rgba(196, 131, 138, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 0%, rgba(212, 185, 120, 0.04) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--gold-light);
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        animation: twinkle 3s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; width: 6px; height: 6px; }
+    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 1s; width: 4px; height: 4px; }
+    .sparkle:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; width: 5px; height: 5px; }
+    .sparkle:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 0.5s; width: 3px; height: 3px; }
+    .sparkle:nth-child(5) { top: 40%; left: 5%; animation-delay: 1.5s; width: 4px; height: 4px; }
+    .sparkle:nth-child(6) { top: 60%; right: 8%; animation-delay: 2.5s; width: 5px; height: 5px; }
+
+    .hero-logo {
+        max-width: 420px;
+        width: 90%;
+        margin-bottom: 40px;
+        animation: fadeInUp 1.2s ease-out;
+        filter: drop-shadow(0 4px 12px rgba(184, 150, 78, 0.1));
+    }
+
+    .hero-tagline {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--rose);
+        margin-bottom: 16px;
+        animation: fadeInUp 1.2s ease-out 0.2s backwards;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 40px;
+        animation: fadeInUp 1.2s ease-out 0.4s backwards;
+    }
+
+    .hero-cta {
+        display: inline-block;
+        padding: 14px 44px;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+        animation: fadeInUp 1.2s ease-out 0.6s backwards;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(184, 150, 78, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .hero-cta:hover {
+        background: var(--gold);
+        color: white;
+    }
+
+    .hero-cta:hover::before {
+        left: 100%;
+    }
+
+    .hero-locations {
+        margin-top: 50px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-light);
+        animation: fadeInUp 1.2s ease-out 0.8s backwards;
+    }
+
+    .dot {
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin: 0 12px;
+        vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            min-height: 90vh;
+            padding: 100px 24px 60px;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+        }
+
+        .hero-tagline {
+            font-size: 17px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-logo {
+            max-width: 260px;
+        }
+    }
+</style>

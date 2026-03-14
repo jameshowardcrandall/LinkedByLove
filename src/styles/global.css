@@ -1,0 +1,109 @@
+/* ─── Linked by Love — Global Styles ─── */
+
+:root {
+    --rose: #c4838a;
+    --rose-light: #d4a0a5;
+    --rose-dark: #a86a71;
+    --gold: #b8964e;
+    --gold-light: #d4b978;
+    --gold-shimmer: #e8d5a3;
+    --cream: #fdf8f5;
+    --cream-dark: #f5ede7;
+    --text: #5a4a4a;
+    --text-light: #8a7a7a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background-color: var(--cream);
+    line-height: 1.8;
+    font-size: 15px;
+    overflow-x: hidden;
+}
+
+/* ─── Keyframes ─── */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Scroll Reveal ─── */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─── Shared Section Styles ─── */
+section {
+    padding: 100px 30px;
+}
+
+.section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 48px;
+    color: var(--rose);
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.section-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    section {
+        padding: 70px 24px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 32px;
+    }
+}
